@@ -27,7 +27,7 @@ let digit = ['0'-'9']+
 
 rule start =
  parse blank { start lexbuf }
-     | "/*" { comment_depth :=1; comment lexbuf; start lexbuf }
+     | "(*" { comment_depth :=1; comment lexbuf; start lexbuf }
      | digit { NUM (int_of_string (Lexing.lexeme lexbuf)) }
      | id { let id = Lexing.lexeme lexbuf
             in try Hashtbl.find keyword_tbl id
