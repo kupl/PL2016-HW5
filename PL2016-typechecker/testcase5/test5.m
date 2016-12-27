@@ -1,0 +1,6 @@
+(* 5. proc *)
+(* (int -> (int -> (int -> bool))) *) 
+proc (f) 
+  proc (g) 
+    proc (h) 
+      (iszero f+(g-h))
